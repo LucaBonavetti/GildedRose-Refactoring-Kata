@@ -49,4 +49,13 @@ class GildedRoseTest {
         assertEquals(1, items[0].sellIn);
         assertEquals(1, items[0].quality);
     }
+
+    @Test
+    void testAgedBrieAfterSellDate() {
+        Item[] items = new Item[] { new Item("Aged Brie", 0, 0) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(-1, items[0].sellIn);
+        assertEquals(2, items[0].quality);
+    }
 }
