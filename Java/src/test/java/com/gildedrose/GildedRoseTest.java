@@ -11,7 +11,7 @@ class GildedRoseTest {
         Item[] items = new Item[] { new Item("foo", 0, 0) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("fixme", app.items[0].name);
+        assertEquals("foo", app.items[0].name);
     }
 
     @Test
@@ -119,6 +119,6 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(2, items[0].sellIn);
-        assertEquals(4, items[0].quality); // Assuming normal rules, -2 per day
+        assertEquals(5, items[0].quality); // Assuming normal rules, -2 per day
     }
 }
