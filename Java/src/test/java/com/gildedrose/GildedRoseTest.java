@@ -112,4 +112,13 @@ class GildedRoseTest {
         assertEquals(-1, items[0].sellIn);
         assertEquals(0, items[0].quality);
     }
+
+    @Test
+    void testConjuredItem() {
+        Item[] items = new Item[] { new Item("Conjured Mana Cake", 3, 6) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(2, items[0].sellIn);
+        assertEquals(4, items[0].quality); // Assuming normal rules, -2 per day
+    }
 }
