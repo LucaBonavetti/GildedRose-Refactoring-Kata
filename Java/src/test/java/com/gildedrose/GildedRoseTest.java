@@ -32,4 +32,13 @@ class GildedRoseTest {
         assertEquals(18, items[0].quality);
     }
 
+    @Test
+    void testNormalItemWithZeroQuality() {
+        Item[] items = new Item[] { new Item("Normal Item", 5, 0) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(4, items[0].sellIn);
+        assertEquals(0, items[0].quality);
+    }
+
 }
