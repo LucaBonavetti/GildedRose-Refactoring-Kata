@@ -5,12 +5,8 @@ public class ConjuredItemUpdater implements ItemUpdater {
     public void update(Item item) {
         item.sellIn--;
 
-        if (item.quality > 0) {
-            item.quality -= 2;
-            if (item.sellIn < 0) {
-                item.quality -= 2;
-            }
-        }
+        int degrade = (item.sellIn < 0) ? 4 : 2;
+        item.quality -= degrade;
 
         if (item.quality < 0) {
             item.quality = 0;

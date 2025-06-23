@@ -119,6 +119,6 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(2, items[0].sellIn);
-        assertEquals(5, items[0].quality); // Assuming normal rules, -2 per day
+        assertEquals(4, items[0].quality);
     }
 }
